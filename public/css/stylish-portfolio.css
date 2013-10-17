@@ -111,7 +111,7 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
-  background: url(../img/bg.JPG) no-repeat center center fixed; 
+  background-color: #C269FE; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -127,7 +127,7 @@ body {
 /* Services */
 
 .services {
-  background: #7fbbda;
+  background: #BD5CFE;
   padding: 50px 0;
   color: #ffffff;
 }
@@ -159,7 +159,7 @@ i.service-icon:hover {
   display: table;
   height: 400px;
   width: 100%;
-  background: url(../img/section-two.jpg) no-repeat center center fixed; 
+  background: white; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
