@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	#top.header
+		.vert-text
+			
+			- if (user) {
+				img(src="/images/main.png")
+				h1= user.email
+				a(href="/queue/" + encodeURIComponent(user._id) ) Click para ver tus descuentos
+
+			- } else {
+				#top.header
+					.vert-text
+						img(src="/images/main.png")
+						h1(style="color:white") Zefira 	
+							sup 
+								small(style="color:white") &reg; 
+						h1(style="color:white") Acceso Total
+						h3(style="color:white")  Las mejores discotecas GRATIS
+						a.btn.btn-primary.btn-lg(href="#intro") Averigua mas
+			- } 	

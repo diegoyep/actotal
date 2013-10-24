@@ -4,10 +4,11 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
+
 var http = require('http');
 var path = require('path');
+var dbURL = 'mongodb://localhost/test';
+var db = require('mongoose').connect(dbURL);
 
 var app = express();
 
@@ -19,16 +20,29 @@ app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico')));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
+app.use(express.cookieParser("mysecretstring"));
+
+app.use(express.session({
+	secret: 'mysecretstring',
+		maxAge: 36000000
+		}));
+
+app.use(function(req, res, next){
+  res.locals.session = req.session ;
+   next();
+});
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+require('./routes/index')(app);
+require('./routes/invite')(app);
+require('./routes/queue')(app);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
