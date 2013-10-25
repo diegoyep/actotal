@@ -5,6 +5,7 @@
 
 module.exports= function(app){
 	app.get('/', function(req, res, next){
+		req.session.destroy();
 		res.render('index', { title: 'Zefira | Acceso Total' });
 	});
 
