@@ -428,3 +428,23 @@ footer {
 .btn-instagram.active {
   background-color: #305777 \9;
 }
+
+.test {
+  background:#C269FE;
+  color:white;
+
+
+}
+.header-in{
+  font-size: 14pt;
+}
+#input-in{
+  margin-left: 44px;
+}
+
+#header-logo{
+  opacity:1;
+}
+.share{
+  margin:22px;
+}

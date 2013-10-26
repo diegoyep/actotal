@@ -14,32 +14,40 @@ module.exports = function(app){
 			});
 		} else {
 			if(req.session._id){
+				console.log(1)
 				MiniUser.findOne({_id: req.session._id}, function(err, referer){
-					console.log(referer)
-					referer.invites.push(req.body.email);
-					referer.save();
-					var miniuser;
-					miniuser = new MiniUser({ email: req.body.email});
-					miniuser.save(function(err){
-						if(err){
-							MiniUser.findOne({email: miniuser.email}, function(err, miniuser){
-								res.redirect('/queue/'+ miniuser._id);
+
+					if(referer._id == req.session._id){
+						res.redirect('/queue/'+ referer._id);
+
+					} else {
+						referer.invites.push(req.body.email);
+						
+						var miniuser;
+						miniuser = new MiniUser({ email: req.body.email});
+						
+						miniuser.save(function(err){
+							if(err){
+
+								MiniUser.findOne({email: miniuser.email}, function(err, miniuser){
+									res.redirect('/queue/'+ miniuser._id);
+								});
+							} else {
+									req.session.user = miniuser;
+									res.redirect('/invite/' + miniuser._id);
+
+								}
 							});
-						} else {
-								req.session.user = miniuser;
-								res.redirect('/invite/' + miniuser._id);
-
-							}
-						});
-
+						referer.save();
+					}
 				});
 			} else {
-
+				console.log(2)
 				var miniuser;
 				miniuser = new MiniUser({ email: req.body.email});
 				miniuser.save(function(err){
 					if(err){
-						MiniUser.findOne({email: miniuser.email}, function(err, miniuser){
+						MiniUser.findOne({email: req.body.email}, function(err, miniuser){
 							res.redirect('/queue/'+ miniuser._id);
 						});
 					} else {
