@@ -17,7 +17,7 @@ module.exports = function(app){
 				console.log(1)
 				MiniUser.findOne({_id: req.session._id}, function(err, referer){
 
-					if(referer._id == req.session._id){
+					if(referer.email == req.body.email){
 						res.redirect('/queue/'+ referer._id);
 
 					} else {
