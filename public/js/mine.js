@@ -6,20 +6,20 @@ $("#menu-toggle").click(function(e) {
           e.preventDefault();
           $("#sidebar-wrapper").toggleClass("active");
       });
-$('#share_button').click(function(e){
+// $('#share_button').click(function(e){
 
-e.preventDefault();
-FB.ui(
-{
-method: 'feed',
-name: 'Zefira Acceso Total',
-link: ' http://accesototal.zefira.pe',
-picture: 'http://accesototal.zefira.pe/images/main.png',
-caption: 'This is the content of the "caption" field.',
-description: 'This is the content of the "description" field, below the caption.',
-message: ''
-});
-});
+// e.preventDefault();
+// FB.ui(
+// {
+// method: 'feed',
+// name: 'Zefira Acceso Total',
+// link: ' http://accesototal.zefira.pe',
+// picture: 'http://accesototal.zefira.pe/images/main.png',
+// caption: 'This is the content of the "caption" field.',
+// description: 'This is the content of the "description" field, below the caption.',
+// message: ''
+// });
+// });
 
 
 $(function() {
