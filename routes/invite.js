@@ -4,7 +4,9 @@
  */
 
 var MiniUser = require('../data/models/MiniUser');
+var shortId = require('shortid');
 
+shortId.seed(2930923);
 module.exports = function(app){
 	app.post('/invite/new', function(req, res, next){
 		var user;
@@ -15,22 +17,25 @@ module.exports = function(app){
 		} else {
 			if(req.session._id){
 				console.log(1)
-				MiniUser.findOne({_id: req.session._id}, function(err, referer){
-
-					if(referer._id == req.session._id){
+				console.log(req.session._id)
+				MiniUser.findOne({_id: req.session._id }, function(err, referer){
+					console.log(referer);
+					console.log(req.body);
+					if(referer.email == req.body.email){
 						res.redirect('/queue/'+ referer._id);
 
 					} else {
 						referer.invites.push(req.body.email);
-						
+						referer.save();
 						var miniuser;
-						miniuser = new MiniUser({ email: req.body.email});
-						
+						miniuser = new MiniUser({ email: req.body.email, _id : shortId.generate()});
+						console.log(miniuser);
 						miniuser.save(function(err){
 							if(err){
-
-								MiniUser.findOne({email: miniuser.email}, function(err, miniuser){
-									res.redirect('/queue/'+ miniuser._id);
+								console.log(err);	
+								MiniUser.findOne( {email: req.body.email} , function(err, mu){
+									console.log(mu)
+									res.redirect('/queue/'+ mu._id);
 								});
 							} else {
 									req.session.user = miniuser;
@@ -38,16 +43,16 @@ module.exports = function(app){
 
 								}
 							});
-						referer.save();
+						
 					}
 				});
 			} else {
 				console.log(2)
 				var miniuser;
-				miniuser = new MiniUser({ email: req.body.email});
+				miniuser = new MiniUser({ email: req.body.email, _id : shortId.generate()});
 				miniuser.save(function(err){
 					if(err){
-						MiniUser.findOne({email: req.body.email}, function(err, miniuser){
+						MiniUser.findOne({email: req.body.email,  }, function(err, miniuser){
 							res.redirect('/queue/'+ miniuser._id);
 						});
 					} else {
@@ -73,6 +78,7 @@ module.exports = function(app){
 		res.render('invite',{
 			title: 'Zefira | Invitaciones',
 			user: user
+			
 		});
 		
 	});

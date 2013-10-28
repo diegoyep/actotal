@@ -2,7 +2,7 @@ extends layout
 
 block content
 	#fb-root
-	script
+	script.
 		(function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
@@ -10,9 +10,11 @@ block content
 		js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1&appId=516873428402136";
 		fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
-	script
-		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');	
+	script.
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
 	- if (user) {
+	
 	#top.header
 		#intro.intro
 			.container
@@ -27,19 +29,19 @@ block content
 						br
 						
 						h4 Comparte esta URL en Facebook, Twitter o por correo electronico
-						.col-md-7.col-md-offset-2
+						.col-md-6.col-md-offset-2.share-link
 							input.form-control#input-in( value="http://accesototal.zefira.pe/invite/" + user._id)	
 						br
 						br
 						br
-					.col-md-8.col-md-offset-2.text-center.test
+					.col-md-8.col-md-offset-2.text-center.test.share-block
 						a#share_button.share 
 							button.btn.btn-facebook 
 								i.icon-facebook
 								|  |   Compartelo en   Facebook
 
 
-						a(href="https://twitter.com/intent/tweet?hashtags=travolta&original_referer=http%3A%2F%2Fsignup.trevolta.com%2Finvite%2F58LWV283084&text=Free%20invite%20to%20crowd-funded%20travels!%20Get%20yourself%20a%20trip%20funded%20by%20the%20crowd%2C%20friends%20or%20sponsors.&tw_p=tweetbutton&url=http%3A%2F%2Fsignup.trevolta.com%2Finvite%2FBSXPB371247")
+						a(href="https://twitter.com/intent/tweet?hashtags=travolta&original_referer=http%3A%2F%2Faccesototal.zefira.pe%2Finvite%2F#{user._id}&text=Free%20invite%20to%20crowd-funded%20travels!%20Get%20yourself%20a%20trip%20funded%20by%20the%20crowd%2C%20friends%20or%20sponsors.&tw_p=tweetbutton&url=http%3A%2F%2Faccesototal.zefira.pe%2Finvite%2F#{user._id}")
 							button.btn.btn-twitter
 								i.icon-twitter
 								|   | Twittealo
@@ -174,7 +176,27 @@ block content
 		
 
 
-
+				
 	script(src="/js/jquery.js")
 	script(src="/js/bootstrap.js")
 	script(src="/js/mine.js")
+
+	script.		
+		
+		$(document).ready(function(){
+			$('#share_button').click(function(e){
+				user = !{JSON.stringify(user)};
+				
+				e.preventDefault();
+				FB.ui(
+				{
+				method: 'feed',
+				name: 'Zefira Acceso Total',
+				link: ' http://accesototal.zefira.pe/invite/'+ user._id  ,
+				picture: 'http://accesototal.zefira.pe/images/main.png',
+				caption: 'Ingreso libre, sin colas, ni entradas ',
+				description: 'Entra a la lista de espera y recibe descuentos en la preventa  ',
+				message: ''
+				});
+				});
+		});
