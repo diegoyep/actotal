@@ -33,12 +33,13 @@ block content
 						.service-item
 							form(action='/invite/new', method='post')
 								
-								input.form-control(type="text", placeholder="Email", name="email")
+								input.form-control(type="text", placeholder="Email", name="email", required)
 								br
 								.col-md-2.col-md-offset-1
 									input.btn.btn-lg.btn-primary(type="submit", value="Unete")
 								.col-md-2.col-md-offset-2			
 									a.btn.btn-primary.btn-lg(href="#intro") Averigua mas
+								p			
 	#intro.intro
 		.container
 			.row
@@ -156,5 +157,7 @@ block content
 
 	script(src="/js/jquery.js")
 	script(src="/js/bootstrap.js")
-	script(src="/js/mine.js")		
+	script(src="/js/jquery.validate.min.js")
+	script(src="/js/mine.js")
+
 						

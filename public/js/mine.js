@@ -20,7 +20,23 @@ $("#menu-toggle").click(function(e) {
 // message: ''
 // });
 // });
+$().ready(function(){
+  $('form').validate({
+    rules: {
+      email: {
+        required: true,
+        email : true
+      }
+    },
+    messages : {
+      email : {
+        required: "Ingresa un correo electronico",
+        email: "Ingresa un correo electronico valido"
+      }
+    }
+  });
 
+})
 
 $(function() {
         $('a[href*=#]:not([href=#])').click(function() {
