@@ -12,9 +12,9 @@ e.preventDefault();
 FB.ui(
 {
 method: 'feed',
-name: 'This is the content of the "name" field.',
-link: ' http://www.hyperarts.com/',
-picture: 'http://www.hyperarts.com/external-xfbml/share-image.gif',
+name: 'Zefira Acceso Total',
+link: ' http://accesototal.zefira.pe',
+picture: 'http://accesototal.zefira.pe/images/main.png',
 caption: 'This is the content of the "caption" field.',
 description: 'This is the content of the "description" field, below the caption.',
 message: ''
