@@ -76,16 +76,35 @@ block content
 			li.sidebar-brand
 				a Acceso Total
 			li
-				a(href="#form-pre") Preordena		
+				a(href="/faq") Que es Acceso Total?
+				a(href="/blog") Blog
+				a(href="#form-pre")	Unete
+				hr
+				a(href="/terms") Terminos de servicio	 
 	#top.header
 		.vert-text
 			img(src="/images/main.png")
-			h1(style="color:white") Zefira
-				sup 
-					small(style="color:white") &reg; 
-			h1(style="color:white") Acceso Total
-			h3(style="color:white")  Las mejores discotecas GRATIS
-			a.btn.btn-primary.btn-lg(href="#intro") Averigua mas
+			h3(style="color:white") Ingresa a tus discotecas favoritas sin hacer colas ni pagar entradas
+			.container
+				.row
+					.col-md-6.col-md-offset-3.text-center
+						h4(style="color:white") 
+							em Unete a la lista de espera solo con tu correo electronico 
+						br	
+						h4(style="color:white")  Inicio pre-venta 15 noviembre | Fiesta de lanzamiento 14 de Diciembre	
+						hr
+				.row
+					.col-md-4.col-md-offset-4.text-center
+						.service-item
+							form(action='/invite/new', method='post')
+								
+								input.form-control(type="text", placeholder="Email", name="email", required)
+								br
+								.col-md-2.col-md-offset-1
+									input.btn.btn-lg.btn-primary(type="submit", value="Unete")
+								.col-md-2.col-md-offset-2			
+									a.btn.btn-primary.btn-lg(href="#intro") Averigua mas
+								p			
 	#intro.intro
 		.container
 			.row
@@ -124,28 +143,52 @@ block content
 					i.service-icon.icon-pencil
 					h4 Beneficios Exclusivos
 					p Gold, Silver y Platinum, tu escoges a donde y que es lo que quieres
+
+			
 			.row
+				.col-md-4.col-md-offset-4.text-center
+					a.btn.btn-lg.btn-primary(href="#prices") Precios
+
+
+	#prices.callout
+		.container.precios
+			.row
+				.col-md-6.col-md-offset-3.text-center
+					h3(style="color:black") Productos
+					hr
+			.row 
+				.col-md-4.col-md-offset-2.text-center
+					h3 Basico
+					h4 S./ 199
+					.col-md-8.col-md-offset-2
+						p Ingreso libre a todas las discotecas del programa, sin colas ni entradas
+				.col-md-4.text-center
+					h3 Premium
+					h4 S./ 699
+					.col-md-8.col-md-offset-2
+						p Ingreso libre a todas las discotecas del programa, sin colas ni entradas
+						p + descuentos
+						p + promociones
+						p + cortesias exclusivas
+						p y mucho mas!!!
+
+			.row
+				hr				
 				.col-md-2.col-md-offset-2.text-center
-					a.btn.btn-default.btn-lg(href="#form-pre") Preordena
-				.col-md-2.text-center
-					a.btn.btn-default.btn-lg(href="#form-pre") Preordena
-				.col-md-2.text-center
-					a.btn.btn-default.btn-lg(href="#form-pre") Preordena		
-				.col-md-2.text-center
-					a.btn.btn-default.btn-lg(href="#form-pre") Preordena		
-
-
-	.callout
-		.vert-text
-			h1(style="color:black;") Descubre una nueva 
-			h1(style="color:black;") manera de divertirte
-			a.btn.btn-primary.btn-lg(href="#form-pre") Preordena
+					a.btn.btn-primary.btn-lg(href="#form-pre") Unete
+					
+				.col-md-6.text-center
+					
+					a.btn.btn-primary.btn-lg(href="/faq") No fue suficiente? Revisa nuestras preguntas mas frecuentes
+				.col-md-8.col-md-offset-2
+					hr
+				p	
 
 	#form-pre.services
 		.container
 			.row
 				.col-md-6.col-md-offset-3.text-center
-					h3 Preordena solo con tu correo electronico 
+					h3 Unete a la lista de espera solo con tu correo electronico 
 					hr
 			.row
 				.col-md-4.col-md-offset-4.text-center
@@ -154,7 +197,10 @@ block content
 							
 							input.form-control(type="text", placeholder="Email", name="email")
 							br
-							input.btn.btn-lg.btn-primary(type="submit", value="Preordena")
+							input.btn.btn-lg.btn-primary(type="submit", value="Unete")
+			.row
+				.col-md-6.col-md-offset-3.text-center
+					h2 Inicio pre-venta: 15 de noviembre				
 
 	footer
 		.container
@@ -171,7 +217,8 @@ block content
 							i.icon-google-plus.icon-2x
 
 					hr
-					p Todos los derechos Reservados &copy; Zefira Acceso Total 2013					
+					p Todos los derechos Reservados &copy; Zefira Acceso Total 2013
+				
 				-	}			
 		
 

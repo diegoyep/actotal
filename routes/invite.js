@@ -7,6 +7,8 @@ var MiniUser = require('../data/models/MiniUser');
 var shortId = require('shortid');
 
 shortId.seed(2930923);
+
+
 module.exports = function(app){
 	app.post('/invite/new', function(req, res, next){
 		var user;
@@ -16,11 +18,9 @@ module.exports = function(app){
 			});
 		} else {
 			if(req.session._id){
-				console.log(1)
-				console.log(req.session._id)
+				
 				MiniUser.findOne({_id: req.session._id }, function(err, referer){
-					console.log(referer);
-					console.log(req.body);
+					
 					if(referer.email == req.body.email){
 						res.redirect('/queue/'+ referer._id);
 
@@ -29,12 +29,12 @@ module.exports = function(app){
 						referer.save();
 						var miniuser;
 						miniuser = new MiniUser({ email: req.body.email, _id : shortId.generate()});
-						console.log(miniuser);
+						
 						miniuser.save(function(err){
 							if(err){
-								console.log(err);	
+									
 								MiniUser.findOne( {email: req.body.email} , function(err, mu){
-									console.log(mu)
+									
 									res.redirect('/queue/'+ mu._id);
 								});
 							} else {
@@ -47,7 +47,7 @@ module.exports = function(app){
 					}
 				});
 			} else {
-				console.log(2)
+				
 				var miniuser;
 				miniuser = new MiniUser({ email: req.body.email, _id : shortId.generate()});
 				miniuser.save(function(err){
