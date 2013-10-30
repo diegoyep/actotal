@@ -35,7 +35,7 @@ block content
 				.row
 					.col-md-4.col-md-offset-4.text-center
 						.service-item
-							form(action='/invite/new', method='post')
+							form#form-one(action='/invite/new', method='post')
 								
 								input.form-control(type="text", placeholder="Email", name="email", required)
 								br
@@ -132,9 +132,9 @@ block content
 			.row
 				.col-md-4.col-md-offset-4.text-center
 					.service-item
-						form(action='/invite/new', method='post')
+						form#form-two(action='/invite/new', method='post')
 							
-							input.form-control(type="text", placeholder="Email", name="email")
+							input.form-control(type="text", placeholder="Email", name="email", required)
 							br
 							input.btn.btn-lg.btn-primary(type="submit", value="Unete")
 			.row

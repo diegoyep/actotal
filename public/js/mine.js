@@ -21,7 +21,7 @@ $("#menu-toggle").click(function(e) {
 // });
 // });
 $().ready(function(){
-  $('form').validate({
+  $('#form-one').validate({
     rules: {
       email: {
         required: true,
@@ -35,7 +35,20 @@ $().ready(function(){
       }
     }
   });
-
+ $('#form-two').validate({
+    rules: {
+      email: {
+        required: true,
+        email : true
+      }
+    },
+    messages : {
+      email : {
+        required: "Ingresa un correo electronico",
+        email: "Ingresa un correo electronico valido"
+      }
+    }
+  });
 })
 
 $(function() {
