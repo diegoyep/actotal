@@ -463,3 +463,8 @@ footer {
 .shift {
   background: #C269FE;
 }
+
+.blog-content {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 12pt;
+}
