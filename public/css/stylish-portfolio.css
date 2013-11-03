@@ -462,9 +462,21 @@ footer {
 
 .shift {
   background: #C269FE;
+  height:180px;
+}
+
+.blog-header{
+  
+  font-family: 'Prosto One', cursive;
+  font-size: 16pt;
 }
 
 .blog-content {
   font-family: 'Share Tech', sans-serif;
+  font-size: 12pt;
+}
+
+.blog-list {
+  font-family: 'Underdog', cursive;
   font-size: 12pt;
 }
