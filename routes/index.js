@@ -27,4 +27,10 @@ module.exports= function(app){
 	app.get('/faq', function(req, res, next){
 		res.render('faq', {title: 'Zefira | Preguntas mas Frecuentes'});
 	});
+
+	app.get('/team', function(req, res , next){
+		res.render('team', {
+			title: "Zefira | Team"
+		})
+	})
 };
