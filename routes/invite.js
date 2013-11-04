@@ -49,7 +49,10 @@ module.exports = function(app){
 			} else {
 				
 				var miniuser;
-				miniuser = new MiniUser({ email: req.body.email, _id : shortId.generate()});
+				miniuser = new MiniUser({ 
+					email: req.body.email, 
+					_id : shortId.generate()
+				});
 				miniuser.save(function(err){
 					if(err){
 						MiniUser.findOne({email: req.body.email,  }, function(err, miniuser){
