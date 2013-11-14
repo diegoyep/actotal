@@ -448,3 +448,39 @@ footer {
 .share{
   margin:22px;
 }
+
+.share-block {
+  margin-left: 15.3%;
+}
+
+.share-link {
+  margin-left: 18.45%;
+}
+.precios {
+  color:black;
+}
+
+.shift {
+  background: #C269FE;
+  height:180px;
+}
+
+.blog-header{
+  
+  font-family: 'Prosto One', cursive;
+  font-size: 16pt;
+}
+
+.blog-content {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 12pt;
+}
+
+.blog-list {
+  font-family: 'Underdog', cursive;
+  font-size: 12pt;
+}
+
+.nb{
+  height:130px;
+}

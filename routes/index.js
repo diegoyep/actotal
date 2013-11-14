@@ -3,10 +3,21 @@
  * GET home page.
  */
 
+ var MiniUser = require('../data/models/MiniUser');
+
+
 module.exports= function(app){
 	app.get('/', function(req, res, next){
 		req.session.destroy();
-		res.render('index', { title: 'Zefira | Acceso Total' });
+		
+
+		MiniUser.count(function(err, count){
+			res.render('index', { 
+				title: 'Zefira | Acceso Total',
+				count: count 
+				
+			});
+		});
 	});
 
 	app.get('/terms' ,function(req, res, next){
@@ -16,4 +27,10 @@ module.exports= function(app){
 	app.get('/faq', function(req, res, next){
 		res.render('faq', {title: 'Zefira | Preguntas mas Frecuentes'});
 	});
+
+	app.get('/team', function(req, res , next){
+		res.render('team', {
+			title: "Zefira | Team"
+		})
+	})
 };
