@@ -91,7 +91,8 @@ module.exports = function(app){
 		
 		res.render('invite',{
 			title: 'Zefira | Invitaciones',
-			user: user
+			user: user,
+			
 		});
 		
 	});
