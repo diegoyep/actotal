@@ -27,8 +27,8 @@ module.exports = function(app){
 					} else {
 						referer.invites.push(req.body.email);
 						referer.save();
-						var User;
-						User = new User({ 
+						var user;
+						user = new User({ 
 							email: req.body.email, 
 							_id : shortId.generate(),
 							miniuser: true,
@@ -36,7 +36,7 @@ module.exports = function(app){
 							username: req.body.email
 							});
 						
-						User.save(function(err){
+						user.save(function(err){
 							if(err){
 									
 								User.findOne( {email: req.body.email} , function(err, mu){
@@ -89,7 +89,7 @@ module.exports = function(app){
 			req.session._id = req.params.id;
 		}
 		
-		res.render('menos',{
+		res.render('invite',{
 			title: 'Zefira | Invitaciones',
 			user: user
 		});
