@@ -1,20 +1,6 @@
 extends layout
 
 block content
-	#sidebar-wrapper
-		ul.sidebar-nav
-			a#menu-close.btn.btn-default.btn-lg.pull-right.toggle
-				i.icon-remove
-			li.sidebar-brand
-				a Acceso Total
-			li
-				a(href="/faq") Que es Acceso Total?
-				a(href="/blog") Blog
-				a(href="#form-pre")	Unete 
-				a(href="/info") Informacion
-				a(href="#") Pre Venta
-				hr
-				a(href="/terms") Terminos de servicio
 	#intro.intro
 		.container
 			.row
@@ -85,7 +71,7 @@ block content
 				.col-md-1.col-md-offset-1.text-center
 					a.btn.btn-primary.btn-lg(href="/blog") Blog
 				.col-md-1.text-center
-					a.btn.btn-primary.btn-lg(href="/blog") Preventa		
+					a.btn.btn-primary.btn-lg(href="http://localhost:8000/preventa") Preventa		
 				.col-md-8.col-md-offset-2
 					hr
 				p	
@@ -108,7 +94,7 @@ block content
 				.col-md-6.col-md-offset-3.text-center
 					h3 O enterate como ser de los primeros en tenerla
 					h2 
-						a(href="#") 
+						a(href="http://localhost:8000/preventa") 
 							button.btn.btn-lg.btn-alert Pre Venta Activa				
 
 	footer
