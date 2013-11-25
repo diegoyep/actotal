@@ -20,22 +20,22 @@ module.exports= function(app){
 	});
 
 	app.get('/terms' ,function(req, res, next){
-		res.render('terms', {title:'Zefira | Terminos y Servicios '});
+		res.render('terms', {title:'Zefira  AT | Terminos y Servicios '});
 	});
 
 	app.get('/faq', function(req, res, next){
-		res.render('faq', {title: 'Zefira | Preguntas mas Frecuentes'});
+		res.render('faq', {title: 'Zefira  AT | Preguntas mas Frecuentes'});
 	});
 
 	app.get('/team', function(req, res , next){
 		res.render('team', {
-			title: "Zefira | Team"
+			title: "Zefira AT | Team"
 		})
 	})
 
 	app.get('/info', function(req, res, next){
 		res.render('info',{
-			title: "Zefira | Informacion"
+			title: "Zefira AT | Informacion"
 		})
 	})
 };

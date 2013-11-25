@@ -128,7 +128,7 @@ module.exports = function(app){
 			req.session._id = req.params.id;
 		}
 		res.render('invite',{
-			title: 'Zefira | Invitaciones',
+			title: 'Zefira AT | Invitaciones',
 			user: user,
 			
 		});

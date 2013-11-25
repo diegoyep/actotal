@@ -8,7 +8,7 @@ module.exports = function(app){
 	q.exec(function(err, posts) {
 			
 			res.render('blog', {
-				title: 'Zefira | Blog', 
+				title: 'Zefira AT | Blog', 
 				posts: posts
 			});
 		});
@@ -19,7 +19,7 @@ module.exports = function(app){
 		Post.findOne({slug : req.params.slug}, function(err, post){
 			console.log(post.author)
 			res.render('post', {
-				title: 'Zefira | Blog',
+				title: 'Zefira AT | Blog',
 				post : post
 			});
 		});

@@ -19,8 +19,8 @@ block content
 				.row
 					.col-md-8.col-md-offset-2.text-center.test
 						h3 Hola #{user.email}
-							a(href="http://localhost:8000/preventa") 
-								button.btn.btn-alert Pre Venta Activa!!!
+							a(href="#") 
+								button.btn.btn-alert Pre Venta  1 Diciembre
 						
 						
 						hr
@@ -29,9 +29,9 @@ block content
 						h4 Hasta este momento tienes #{user.invites.length} invitaciones exitosas
 						br
 						p Con ello has obtenido 
-						h3 10% de descuento 
+						h3 #{bonus} 
 						br
-						p en el precio de venta del producto que escojas
+						p para gastar en cualquier establecimiento afiliado
 
 				.row
 					.col-md-8.col-md-offset-2.text-center.test
@@ -41,13 +41,13 @@ block content
 							thead
 								tr
 									th.text-center Sin invitaciones
-									th.text-center Menos de tres
-									th.text-center Mas de tres
+									th.text-center Menos de cuatro
+									th.text-center Mas de cuatro
 							tbody
 								tr
-									td 10% descuento
-									td 20% descuento
-									td 30% descuento
+									td S./ 35
+									td S./ 75 
+									td S./ 100
 				.row
 					.col-md-8.col-md-offset-2.text-center.test
 						h4 
@@ -60,7 +60,7 @@ block content
 								|  |   Compartelo en   Facebook
 
 
-						a(href="https://twitter.com/intent/tweet?hashtags=travolta&original_referer=http%3A%2F%2Faccesototal.zefira.pe%2Finvite%2F#{user._id}&text=Free%20invite%20to%20crowd-funded%20travels!%20Get%20yourself%20a%20trip%20funded%20by%20the%20crowd%2C%20friends%20or%20sponsors.&tw_p=tweetbutton&url=http%3A%2F%2Faccesototal.zefira.pe%2Finvite%2F#{user._id}")
+						a(href="https://twitter.com/intent/tweet?hashtags=zefira,accesototal,at&original_referer=http%3A%2F%2Faccesototal.zefira.pe%2Finvite%2F#{user._id}&text=Ingresa%20gratis%20a%20tus%20discotecas%20favoritas.%20Olvidate%20de%20hacer%20lista%20o%20pagar%20entrada.&tw_p=tweetbutton&url=http%3A%2F%2Faccesototal.zefira.pe%2Finvite%2F#{user._id}")
 							button.btn.btn-twitter
 								i.icon-twitter
 								|   | Twittealo
@@ -69,12 +69,12 @@ block content
 						
 						p.text-center Todos los derechos Reservados &copy; Zefira Acceso Total 2013						
 
-	script(src="/js/jquery.js")
-	script(src="/js/bootstrap.js")
-	script(src="/js/jquery.validate.min.js")
-	script(src="/js/mine.js")
+	script.(src="http://d1s0u8p3pv0ol2.cloudfront.net/bootstrap/jquery.js")
+	script.(src="http://d1s0u8p3pv0ol2.cloudfront.net/bootstrap/bootstrap.js")
+	script.(src="http://d1s0u8p3pv0ol2.cloudfront.net/bootstrap/jquery.validate.min.js")
+	script.(src="http://d1s0u8p3pv0ol2.cloudfront.net/bootstrap/mine.js")
 	
-	script.		
+	script.(type="text/javascript")		
 		
 		$(document).ready(function(){
 			$('#share_button').click(function(e){
@@ -84,11 +84,11 @@ block content
 				FB.ui(
 				{
 				method: 'feed',
-				name: 'Zefira Acceso Total',
+				name: 'Zéfira Acceso Total',
 				link: ' http://accesototal.zefira.pe/invite/'+ user._id  ,
-				picture: 'http://accesototal.zefira.pe/images/main.png',
-				caption: 'Ingreso libre, sin colas, ni entradas ',
-				description: 'Entra a la lista de espera y recibe descuentos en la preventa  ',
+				picture: 'http://d1s0u8p3pv0ol2.cloudfront.net/bootstrap/main.png',
+				caption: 'Ingresa gratis a tus discotecas favoritas. Olvidate de hacer lista o pagar entrada. Obten beneficios en docenas de establecimientos mas.',
+				description: 'Entra a la lista de espera y recibe bonos para gastar en los establecimientos afiliados',
 				message: ''
 				});
 				});
