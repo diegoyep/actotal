@@ -17,7 +17,7 @@ module.exports = function(app){
 					bonus = "S./75";
 				}
 				res.render('queue', {
-					title: 'Zefira AT | Lista de Espera',
+					title: 'Zéfira AT | Lista de Espera',
 					user : user,
 					bonus : bonus
 				});

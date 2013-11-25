@@ -24,7 +24,7 @@ block content
 						h3 Gracias por unirte a la lista de Espera
 						hr
 					.col-md-8.col-md-offset-2.text-center.test
-						h4 Obten descuentos sobre el precio de pre-venta invitando al menos a tres nuevos miembros a la comunidad. Mientras mas personas invites, mas descuento obtienes!
+						h4 Obtén dinero para gastar en los establecimientos afiliados invitando al menos a tres personas a la comunidad. Mientras más personas invites, más dinero obtienes!
 					.col-md-8.col-md-offset-2.text-center.test
 						br
 						
@@ -39,7 +39,7 @@ block content
 						a#share_button.share 
 							button.btn.btn-facebook 
 								i.icon-facebook
-								|  |   Compartelo en   Facebook
+								|  |   Compártelo en   Facebook
 
 
 						a(href="https://twitter.com/intent/tweet?hashtags=zefira,accesototal,at&original_referer=http%3A%2F%2Faccesototal.zefira.pe%2Finvite%2F#{user._id}&text=Ingresa%20gratis%20a%20tus%20discotecas%20favoritas.%20Olvidate%20de%20hacer%20lista%20o%20pagar%20entrada.&tw_p=tweetbutton&url=http%3A%2F%2Faccesototal.zefira.pe%2Finvite%2F#{user._id}")
@@ -57,7 +57,7 @@ block content
 								button.btn.btn-primary Mira que beneficios puedes obtener al invitar a tus amigos  				
 						h4 
 							a(href="/info")
-								button.btn.btn-primary	Que es Zefira Acceso Total?
+								button.btn.btn-primary	¿Qué es Zefira Acceso Total?
 						h4 ¿No puedes esperar? 
 							i.icon-arrow-right    
 							a(href="#")
@@ -75,12 +75,12 @@ block content
 	#top.header
 		.vert-text
 			img(src="/images/main.png")
-			h3(style="color:white") Ingresa a tus discotecas favoritas sin hacer colas ni pagar entradas
+			h3(style="color:white") Ingresa a tus discotecas favoritas sin hacer colas o pagar entradas
 			.container
 				.row
 					.col-md-6.col-md-offset-3.text-center
 						h4(style="color:white") 
-							em Unete a la lista de espera solo con tu correo electronico
+							em Únete a la lista de espera solo con tu correo electrÓnico
 						br	
 						h4(style="color:white")  
 							a(href="http://localhost:8000",style="color:#67FF2C", target="_blank")
@@ -95,9 +95,9 @@ block content
 								input.form-control(type="text", placeholder="Email", name="email", required)
 								br
 								.col-md-2.col-md-offset-1
-									input.btn.btn-lg.btn-primary(type="submit", value="Unete")
+									input.btn.btn-lg.btn-primary(type="submit", value="Únete")
 								.col-md-2.col-md-offset-2			
-									a.btn.btn-primary.btn-lg(href="/info") Averigua mas
+									a.btn.btn-primary.btn-lg(href="/info") Averigua más
 								p	 
 	- } 
 
@@ -116,11 +116,11 @@ block content
 				FB.ui(
 				{
 				method: 'feed',
-				name: 'Zefira Acceso Total',
+				name: 'Zéfira Acceso Total',
 				link: ' http://accesototal.zefira.pe/invite/'+ user._id  ,
 				picture: 'http://d1s0u8p3pv0ol2.cloudfront.net/bootstrap/main.png',
-				caption: 'Ingresa gratis a tus discotecas favoritas. Olvidate de hacer lista o pagar entrada. Obten beneficios en docenas de establecimientos mas.',
-				description: 'Entra a la lista de espera y recibe bonos para gastar en los establecimientos afiliados',
+				caption: 'Ingresa gratis a tus discotecas favoritas. Olvídate de hacer lista o pagar entrada. Obtén beneficios en docenas de establecimientos más.',
+				description: 'Entra a la lista de espera y recibe bonos para gastar en los establecimientos afiliados.',
 				message: ''
 				});
 				});
