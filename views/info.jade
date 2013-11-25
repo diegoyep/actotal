@@ -1,0 +1,127 @@
+extends layout
+
+block content
+	#intro.intro
+		.container
+			.row
+				.col-md-6.col-md-offset-3.text-center
+					h2  Con Zefira "Acceso Total" puedes entrar a todas nuestras discotecas mostrando solamente tu tarjeta
+					p.lead No mas colas, no mas entradas
+							
+
+
+	#services.services
+		.container
+			.row
+				.col-md-4.col-md-offset-4.text-center
+					h2 Beneficios
+			.row
+				.col-md-2.col-md-offset-2.text-center
+					.service-item
+					i.service-icon.icon-time
+					h4 Olvida las colas
+					p Con acceso Total, ingresas directamente mostrando tu tarjeta en la puerta de la disco. 	
+			
+				.col-md-2.text-center
+					.service-item
+					i.service-icon.icon-dollar
+					h4 Ingreso Libre
+					p Olvidate de pagar por entrar a divertirte. No mas listas
+			
+				.col-md-2.text-center
+					.service-item
+					i.service-icon.icon-group
+					h4 Lleva a tu gente
+					p Ingresa con tus amigos y pasala de la puta mare
+			
+				.col-md-2.text-center
+					.service-item
+					i.service-icon.icon-thumbs-up-alt
+					h4 Beneficios extras
+					p Bares, pubs, lounges y karaokes. El programa incluye beneficios en todos estos lugares.
+			
+			
+
+
+	#prices.callout
+		.container.precios
+			.row
+				.col-md-6.col-md-offset-3.text-center
+					h3(style="color:black") Acceso Total
+					hr
+			.row
+				.col-md-4.col-md-offset-4.text-center
+					h4 S./ 499
+					.col-md-8.col-md-offset-2
+						p Ingreso libre a las discotecas del programa, sin colas ni entradas
+						p + descuentos
+						p + promociones
+						p + cortesias exclusivas
+						p y mucho mas!!!
+
+			.row
+				hr				
+				.col-md-2.col-md-offset-2.text-center
+					a.btn.btn-primary.btn-lg(href="#form-pre") Unete
+					
+				.col-md-2.text-center
+					
+					a.btn.btn-primary.btn-lg(href="/faq") Preguntas mas frecuentes
+
+				.col-md-1.col-md-offset-1.text-center
+					a.btn.btn-primary.btn-lg(href="/blog") Blog
+				.col-md-1.text-center
+					a.btn.btn-primary.btn-lg(href="http://localhost:8000/preventa") Preventa		
+				.col-md-8.col-md-offset-2
+					hr
+				p	
+
+	#form-pre.services
+		.container
+			.row
+				.col-md-6.col-md-offset-3.text-center
+					h3 Unete a la lista de espera solo con tu correo electronico 
+					hr
+			.row
+				.col-md-4.col-md-offset-4.text-center
+					.service-item
+						form#form-two(action='/invite/new', method='post')
+							
+							input.form-control(type="text", placeholder="Email", name="email", required)
+							br
+							input.btn.btn-lg.btn-primary(type="submit", value="Unete")
+			.row
+				.col-md-6.col-md-offset-3.text-center
+					h3 O enterate como ser de los primeros en tenerla
+					h2 
+						a(href="http://localhost:8000/preventa") 
+							button.btn.btn-lg.btn-alert Pre Venta Activa				
+
+	footer
+		.container
+			.row
+				.col-md-6.col-md-offset-3.text-center
+					ul.list-inline
+						li
+							i.icon-facebook.icon-2x
+							
+
+						li
+							i.icon-twitter.icon-2x
+						li
+							i.icon-instagram.icon-2x
+						li
+							i.icon-google-plus.icon-2x
+
+					hr
+					a(href='/terms') Terminos de Servicio
+					|   |     
+					a(href='/team') Equipo 
+					|   |
+					a(href='/blog') Blog
+					|   |     
+					a(href='/terms') Preventa
+					p Todos los derechos Reservados &copy; Zefira Acceso Total 2013
+
+
+

@@ -3,15 +3,14 @@
  * GET home page.
  */
 
- var MiniUser = require('../data/models/MiniUser');
+ var User = require('../data/models/User');
 
 
 module.exports= function(app){
 	app.get('/', function(req, res, next){
 		req.session.destroy();
-		
 
-		MiniUser.count(function(err, count){
+		User.count({miniuser: true}, function(err, count){
 			res.render('index', { 
 				title: 'Zefira | Acceso Total',
 				count: count 
@@ -31,6 +30,12 @@ module.exports= function(app){
 	app.get('/team', function(req, res , next){
 		res.render('team', {
 			title: "Zefira | Team"
+		})
+	})
+
+	app.get('/info', function(req, res, next){
+		res.render('info',{
+			title: "Zefira | Informacion"
 		})
 	})
 };

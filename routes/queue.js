@@ -1,15 +1,15 @@
-var MiniUser = require('../data/models/MiniUser');
+var User = require('../data/models/User');
 
 
 module.exports = function(app){
 	app.get('/queue/:id', function(req, res, next){
-		var User;
-		MiniUser.findOne({_id:req.params.id } , function(err, user){
+		var user;
+		User.findOne({_id:req.params.id } , function(err, user){
 			if(user){
-				User = user;
+				user = user;
 				res.render('queue', {
 					title: 'Zefira | Lista de Espera',
-					user : User
+					user : user
 				});
 
 			}
