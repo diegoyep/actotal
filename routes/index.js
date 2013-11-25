@@ -3,17 +3,16 @@
  * GET home page.
  */
 
- var MiniUser = require('../data/models/MiniUser');
+ var User = require('../data/models/User');
 
 
 module.exports= function(app){
 	app.get('/', function(req, res, next){
 		req.session.destroy();
-		
 
-		MiniUser.count(function(err, count){
+		User.count({miniuser: true}, function(err, count){
 			res.render('index', { 
-				title: 'Zefira | Acceso Total',
+				title: 'Zéfira | Acceso Total',
 				count: count 
 				
 			});
@@ -21,16 +20,22 @@ module.exports= function(app){
 	});
 
 	app.get('/terms' ,function(req, res, next){
-		res.render('terms', {title:'Zefira | Terminos y Servicios '});
+		res.render('terms', {title:'Zéfira  AT | Terminos y Servicios '});
 	});
 
 	app.get('/faq', function(req, res, next){
-		res.render('faq', {title: 'Zefira | Preguntas mas Frecuentes'});
+		res.render('faq', {title: 'Zéfira  AT | Preguntas mas Frecuentes'});
 	});
 
 	app.get('/team', function(req, res , next){
 		res.render('team', {
-			title: "Zefira | Team"
+			title: "Zéfira AT | Team"
+		})
+	})
+
+	app.get('/info', function(req, res, next){
+		res.render('info',{
+			title: "Zéfira AT | Informacion"
 		})
 	})
 };

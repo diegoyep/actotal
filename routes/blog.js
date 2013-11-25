@@ -5,10 +5,10 @@ var Post = require('../data/models/Post');
 module.exports = function(app){
 	app.get('/blog', function(req, res, next) {
 	var q = Post.find({}).limit(10);
-	q.execFind(function(err, posts) {
+	q.exec(function(err, posts) {
 			
 			res.render('blog', {
-				title: 'Zefira | Blog', 
+				title: 'Zéfira AT | Blog', 
 				posts: posts
 			});
 		});
@@ -19,7 +19,7 @@ module.exports = function(app){
 		Post.findOne({slug : req.params.slug}, function(err, post){
 			console.log(post.author)
 			res.render('post', {
-				title: 'Zefira | Blog',
+				title: 'Zéfira AT | Blog',
 				post : post
 			});
 		});
