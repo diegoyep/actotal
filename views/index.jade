@@ -8,16 +8,55 @@ block content
 			h3(style="color:white") Ingresa a tus discotecas favoritas sin hacer colas o pagar entradas
 			.container
 				.row
-					.col-md-6.col-md-offset-3.text-center
-						h4(style="color:white") 
+					.col-md-6.col-md-offset-3
+						h4.text-center(style="color:white") 
 							em Únete a la lista de espera solo con tu correo electrónico 
 						br	
-						h4(style="color:white")  
-							a(href="#",style="color:#67FF2C", target="_blank")
-								button.btn.btn-alert Pre Venta 1 Diciembre
-							|  
-							a(href="#",style="color:#67FF2C", target="_blank")
-								button.btn.btn-alert Pre Venta 1 Diciembre
+						
+						a.btn.btn-default(href="#",data-toggle="modal", role='button', data-target="#createPlace")¿Qué es Acceso Total?
+						#createPlace.modal.fade(tabindex='-1', role="dialog", aria-labelledby='myModalLabel' aria-hidden='true')
+							.modal-dialog
+								.modal-content
+									.modal-header(style="text-align:center;")
+										button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+										h3 ¿Qué es Acceso Total?
+									.modal-body(style="text-align:left;")
+										p AT es una membresia que ofrece a sus socios acceso libre en decenas de establecimientos de diversion nocturna. Ademas, puedes formar parte de nuestra red social privada, y disfrutar de funcionalidad exclusiva para nuestro programa.
+
+										p Si quieres averigurar mas has click 
+											a(href="info") aca
+
+
+
+						|  
+						a.btn.btn-default(href="#",data-toggle="modal", role='button', data-target="#createPlace2") Política de Privacidad y Terminos de Servicio
+						#createPlace2.modal.fade(tabindex='-1', role="dialog", aria-labelledby='myModalLabel' aria-hidden='true')
+							.modal-dialog
+								.modal-content
+									.modal-header(style="text-align:center;")
+										button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+										h3 Política de Privacidad y Terminos de Servicio
+									.modal-body(style="text-align:left;")
+										
+										p
+											strong Zéfira Acceso total no agrega usuarios a su sitio web sin permiso
+										p  Una persona puede ser agregada solamente cuando lo hace por sí misma o si un amigo los invita. Si alguien te afilia a Acceso total sin tu permiso y no quieres ser parte de nuestra comunidad, por favor, contactanos.	
+										br 			
+										
+									
+										p
+											strong Zéfira Acceso total no vende o distribuye tu informacion de contacto o correo electrónico a terceras personas
+										p  	Nosotros no enviamos spam. Utilizamos tu correo electrónico para comunicarnos contigo acerca de la informacion mas actualizada de Acceso Total, así como para tambien hacerte saber cuando y como estaremos saliendo al público. Nunca la mostraremo públicamente en nuestro sitio.	
+									
+										br	
+									
+										p
+											strong Zéfira Acceso total mantiene toda información respecto a tu actividad dentro del programa confidencial y no la utiliza como medios de generar ingresos o publicidad con las empresas afiliadas
+										p  	Puedes utilizar tu tarjeta cuantas veces y en cualquiera de los establecimientos afiliados sin preocuparte. Tu utilizacion es completa y absolutamente privada. No se comparte ni se compartira con las empresas afiliadas. 
+										br	
+
+										.modal-footer
+											a(data-dismiss="modal").btn.btn-lg.btn-primary Volver
 				.row
 					.col-md-6.col-md-offset-3.text-center			
 						h5
@@ -30,10 +69,10 @@ block content
 								
 								input.form-control(type="text", placeholder="Email", name="email", required)
 								br
-								.col-md-2.col-md-offset-1
+								.col-md-3.col-md-offset-4
 									input.btn.btn-lg.btn-primary(type="submit", value="Únete")
-								.col-md-2.col-md-offset-2			
-									a.btn.btn-primary.btn-lg(href="/info") Averigua más
+								
+									
 								
 
 	script(src="http://d1s0u8p3pv0ol2.cloudfront.net/bootstrap/jquery.js")
