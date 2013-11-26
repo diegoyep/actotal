@@ -13,10 +13,10 @@ var db = require('mongoose').connect(dbURL);
 var app = express();
 
 // all environments
+app.use(express.compress());
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(express.compress());
 app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico')));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
