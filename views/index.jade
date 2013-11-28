@@ -12,7 +12,7 @@ block content
 						h4.text-center(style="color:white") 
 							em Únete a la lista de espera solo con tu correo electrónico 
 						br	
-						
+					.col-md-8.col-md-offset-2	
 						a.btn.btn-default(href="#",data-toggle="modal", role='button', data-target="#createPlace")¿Qué es Acceso Total?
 						#createPlace.modal.fade(tabindex='-1', role="dialog", aria-labelledby='myModalLabel' aria-hidden='true')
 							.modal-dialog
@@ -57,6 +57,33 @@ block content
 
 										.modal-footer
 											a(data-dismiss="modal").btn.btn-lg.btn-primary Volver
+						|  
+						a.btn.btn-default(href="#",data-toggle="modal", role='button', data-target="#createPlace3") Descubre los beneficios de unirte
+						#createPlace3.modal.fade(tabindex='-1', role="dialog", aria-labelledby='myModalLabel' aria-hidden='true')
+							.modal-dialog
+								.modal-content
+									.modal-header(style="text-align:center;")
+										button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+										h3 Lista de Espera
+									.modal-body(style="text-align:left;")
+										
+										br
+										p Obtén un bono para gastar en cualquiera de los establecimientos afiliados. Solo tienes que publicar el link que la app te genera al unirte en tu facebook o twitter. 
+										p El link posee un identificador que permite al sistema conocer de donde estan viniendo el click y registra la referencia, de realizarse. 
+										table.table.table-bordered
+											thead
+												tr
+													th.text-center Sin invitaciones
+													th.text-center Menos de cuatro
+													th.text-center Más de cuatro
+											tbody
+												tr
+													td S./ 35
+													td S./ 75 
+													td S./ 100
+										p Si quieres saber cuantas invitaciones tienes concretadas, entra tu correo en la pagina de inicio como si estuvieras afiliandote y te la app te redirigira a la informacion. (Entendemos lo poco intuitiva de esta funcionalidad, estamos trabajando en mejorarla)
+										.modal-footer
+											a(data-dismiss="modal").btn.btn-lg.btn-primary Volver		
 				.row
 					.col-md-6.col-md-offset-3.text-center			
 						h5
