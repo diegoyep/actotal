@@ -7,8 +7,8 @@ var express = require('express');
 
 var http = require('http');
 var path = require('path');
-var dbURL = 'mongodb://localhost/test';
-var db = require('mongoose').connect(dbURL);
+var dbURL = 'mongodb://zefira-admin:finalf@ds043368.mongolab.com:43368/zefira-dev';
+var db = require('mongoosse').connect(dbURL);
 
 var app = express();
 
