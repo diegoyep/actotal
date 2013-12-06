@@ -10,11 +10,11 @@ module.exports = function(app){
 				user = user;
 
 				if (user.invites.length == 0) {
-					bonus = "S./35";
+					bonus = "35  puntos";
 				} else if (user.invites.length > 3 ) {
-					bonus = "S./100";
+					bonus = "100 puntos ";
 				} else {
-					bonus = "S./75";
+					bonus = "75 puntos";
 				}
 				res.render('queue', {
 					title: 'Zéfira AT | Lista de Espera',

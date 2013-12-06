@@ -58,11 +58,7 @@ block content
 						h4 
 							a(href="/info")
 								button.btn.btn-primary	¿Qué es Zefira Acceso Total?
-						h4 ¿No puedes esperar? 
-							i.icon-arrow-right    
-							a(href="#")
-								button.btn.btn-alert Pre Venta 1 diciembre
-						
+				
 								
 		
 				.row
@@ -74,31 +70,97 @@ block content
 	- } else {
 	#top.header
 		.vert-text
-			img(src="/images/main.png")
+			img(src="http://d1s0u8p3pv0ol2.cloudfront.net/bootstrap/main.png")
 			h3(style="color:white") Ingresa a tus discotecas favoritas sin hacer colas o pagar entradas
 			.container
 				.row
-					.col-md-6.col-md-offset-3.text-center
-						h4(style="color:white") 
-							em Únete a la lista de espera solo con tu correo electrÓnico
+					.col-md-6.col-md-offset-3
+						h4.text-center(style="color:white") 
+							em Únete a la lista de espera solo con tu correo electrónico 
 						br	
-						h4(style="color:white")  
-							a(href="http://localhost:8000",style="color:#67FF2C", target="_blank")
-								button.btn.btn-alert Preventa activa  
-							|    |  Fiesta de lanzamiento 31 de Diciembre	
+					.col-md-8.col-md-offset-2	
+						a.btn.btn-default(href="#",data-toggle="modal", role='button', data-target="#createPlace")¿Qué es Zéfira AT?
+						#createPlace.modal.fade(tabindex='-1', role="dialog", aria-labelledby='myModalLabel' aria-hidden='true')
+							.modal-dialog
+								.modal-content
+									.modal-header(style="text-align:center;")
+										button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+										h3 ¿Qué es Acceso Total?
+									.modal-body(style="text-align:left;")
+										p Zefira AT es una aplicación basada en puntos que te permite obtener acceso beneficios extraordinarios en establecimientos de diversión, eventos patrocinados por la empresa y mucho más.
+
+										p Olvídate de hacer colas, de pagar entradas, de esperar por entrar a divertirte. Todo es mas fácil usando Zéfira. Únete a la lista de espera y se de los primeros en probar la aplicación. 
+
+										
+
+
+
+						|  
+						a.btn.btn-default(href="#",data-toggle="modal", role='button', data-target="#createPlace2") Política de Privacidad y Terminos de Servicio
+						#createPlace2.modal.fade(tabindex='-1', role="dialog", aria-labelledby='myModalLabel' aria-hidden='true')
+							.modal-dialog
+								.modal-content
+									.modal-header(style="text-align:center;")
+										button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+										h3 Política de Privacidad y Terminos de Servicio
+									.modal-body(style="text-align:left;")
+										
+										p
+											strong Zéfira Acceso total no agrega usuarios a su sitio web sin permiso
+										p  Una persona puede ser agregada solamente cuando lo hace por sí misma o si un amigo los invita. Si alguien te afilia a Acceso total sin tu permiso y no quieres ser parte de nuestra comunidad, por favor, contactanos.	
+										br 			
+										
+									
+										p
+											strong Zéfira Acceso total no vende o distribuye tu informacion de contacto o correo electrónico a terceras personas
+										p  	Nosotros no enviamos spam. Utilizamos tu correo electrónico para comunicarnos contigo acerca de la informacion mas actualizada de Acceso Total, así como para tambien hacerte saber cuando y como estaremos saliendo al público. Nunca la mostraremo públicamente en nuestro sitio.	
+									
+										br	
+									
+										
+
+										.modal-footer
+											a(data-dismiss="modal").btn.btn-lg.btn-primary Volver
+						|  
+						a.btn.btn-default(href="#",data-toggle="modal", role='button', data-target="#createPlace3") Descubre los beneficios de unirte
+						#createPlace3.modal.fade(tabindex='-1', role="dialog", aria-labelledby='myModalLabel' aria-hidden='true')
+							.modal-dialog
+								.modal-content
+									.modal-header(style="text-align:center;")
+										button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+										h3 Lista de Espera
+									.modal-body(style="text-align:left;")
+										
+										br
+										p Obtén un bono en puntos para gastar en cualquiera de los establecimientos afiliados(cada punto tiene valor nominal de 1 nuevo sol). Solo tienes que publicar el link que la app te genera al unirte en tu facebook o twitter. 
+										p El link posee un identificador que permite al sistema conocer de donde esta viniendo el click y registra la referencia, de realizarse.
+										table.table.table-bordered
+											thead
+												tr
+													th.text-center Sin invitaciones
+													th.text-center Menos de cuatro
+													th.text-center Más de cuatro
+											tbody
+												tr
+													td 35 puntos
+													td 75 puntos
+													td 100 puntoos
+										p Si quieres saber cuantas invitaciones tienes concretadas, ingresa tu correo en la página de inicio como si estuvieras afiliandote y la app te redirigira a la información. (Entendemos lo poco intuitiva de esta funcionalidad, estamos trabajando en mejorarla)
+										.modal-footer
+											a(data-dismiss="modal").btn.btn-lg.btn-primary Volver		
+				.row
+					.col-md-6.col-md-offset-3.text-center	
 						hr
 				.row
 					.col-md-4.col-md-offset-4.text-center
 						.service-item
-							form(action='/invite/new', method='post')
+							form#form-one(action='/invite/new', method='post')
 								
-								input.form-control(type="text", placeholder="Email", name="email", required)
+								input.form-control(type="email", placeholder="Email", name="email", required)
 								br
-								.col-md-2.col-md-offset-1
+								.col-md-3.col-md-offset-4
 									input.btn.btn-lg.btn-primary(type="submit", value="Únete")
-								.col-md-2.col-md-offset-2			
-									a.btn.btn-primary.btn-lg(href="/info") Averigua más
-								p	 
+ 
 	- } 
 
 	script(src="http://d1s0u8p3pv0ol2.cloudfront.net/bootstrap/jquery.js")

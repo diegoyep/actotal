@@ -127,10 +127,10 @@ module.exports = function(app){
 			user = null;
 			req.session._id = req.params.id;
 		}
+		
 		res.render('invite',{
 			title: 'Zéfira AT | Invitaciones',
 			user: user,
-			
 		});
 		
 	});
